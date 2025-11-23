@@ -75,10 +75,10 @@ body.dark .site-header { background:rgba(30,41,59,.75); }
 .hero { position:relative; min-height:84dvh; display:flex; align-items:center; padding:5rem 0 4rem; }
 .hero-bg { position:absolute; inset:0; background: var(--grad-hero); z-index:-1; }
 .hero-content { text-align:left; }
-.hero-layout { display:grid; gap:3.2rem; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); align-items:center; }
-.hero-image-wrapper { position:relative; width:100%; aspect-ratio:5/4; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); animation:floatIn 1.2s cubic-bezier(.25,.46,.45,.94) forwards; opacity:0; }
+.hero-layout { display:grid; gap:3.2rem; grid-template-columns:1fr 1.5fr; align-items:center; }
+.hero-image-wrapper { position:relative; width:100%; aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); animation:floatIn 1.2s cubic-bezier(.25,.46,.45,.94) forwards; opacity:0; }
 @keyframes floatIn { from { opacity:0; transform:translateY(30px) scale(.96); } to { opacity:1; transform:translateY(0) scale(1); } }
-.hero-image { width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.25,.46,.45,.94); }
+.hero-image { width:100%; height:100%; object-fit:cover; object-position:center 35%; transition:transform .6s cubic-bezier(.25,.46,.45,.94); }
 .hero-image-wrapper:hover .hero-image { transform:scale(1.05); }
 .hero-accent-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,181,255,.12) 0%,rgba(99,102,241,.18) 100%); mix-blend-mode:overlay; pointer-events:none; opacity:.75; transition:opacity var(--transition); }
 .hero-image-wrapper:hover .hero-accent-overlay { opacity:.5; }
@@ -110,7 +110,7 @@ body.dark .hero-accent-overlay { background:linear-gradient(135deg,rgba(0,181,25
 .media-card .about-illustration svg { width:100%; max-width:380px; height:auto; }
 body.dark .media-card.svg-card { background: var(--color-surface); }
 .about-single { padding:0; background:var(--color-surface-alt); }
-.about-single img { aspect-ratio:16/9; object-fit:cover; width:100%; height:auto; display:block; }
+.about-single img { aspect-ratio:21/9; object-fit:cover; object-position:center 20%; width:100%; height:auto; display:block; }
 body.dark .about-single { background:var(--color-surface); }
 body.dark .about-single img { filter:brightness(.9) saturate(.9); }
 .media-card .overlay { position:absolute; inset:auto 0 0 0; padding:.8rem 1rem; background:linear-gradient(to top,rgba(0,0,0,.55),transparent); color:#fff; font-size:.85rem; }
