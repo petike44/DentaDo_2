@@ -2,26 +2,31 @@
   {
     "author": "Maya R.",
     "service": "Cosmetic Whitening",
-    "quote": "The whitening results exceeded my expectations and the team made me feel completely at ease."
+    "quote": "The whitening results exceeded my expectations and the team made me feel completely at ease.",
+    "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=160&q=60"
   },
   {
     "author": "Jordan P.",
     "service": "Implant Restoration",
-    "quote": "Precision work and clear guidance at every step. My new tooth looks and feels natural."
+    "quote": "Precision work and clear guidance at every step. My new tooth looks and feels natural.",
+    "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=160&q=60"
   },
   {
     "author": "Emily T.",
     "service": "Pediatric Visit",
-    "quote": "My son actually looks forward to his checkups now—gentle, friendly and patient-focused care!"
+    "quote": "My son actually looks forward to his checkups now—gentle, friendly and patient-focused care!",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=160&q=60"
   },
   {
     "author": "Carlos M.",
     "service": "Orthodontic Aligners",
-    "quote": "Super discreet treatment with consistent updates. The progress photos keep me motivated."
+    "quote": "Super discreet treatment with consistent updates. The progress photos keep me motivated.",
+    "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=160&q=60"
   },
   {
     "author": "Naomi K.",
     "service": "Preventive Care",
-    "quote": "The most thorough cleaning I've had; appreciated the actionable hygiene tips afterward."
+    "quote": "The most thorough cleaning I've had; appreciated the actionable hygiene tips afterward.",
+    "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=160&q=60"
   }
 ]

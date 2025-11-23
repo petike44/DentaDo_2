@@ -49,12 +49,11 @@
   // Load testimonials
   fetch('assets/data/testimonials.json')
     .then(r => r.json())
-    .then(data => {
-      testimonialList.setAttribute('aria-busy','false');
-      testimonialList.innerHTML = data.map(t => `\n        <article class="testimonial reveal" tabindex="0">\n          <p class="quote">“${t.quote}”</p>\n          <div class="author">${t.author} • ${t.service}</div>\n        </article>`).join('');
-      // observe newly added testimonials
-      testimonialList.querySelectorAll('.testimonial').forEach(el => io.observe(el));
-    })
+      .then(data => {
+        testimonialList.setAttribute('aria-busy','false');
+        testimonialList.innerHTML = data.map(t => `\n        <article class="testimonial reveal" tabindex="0">\n          <div class="testimonial-header">\n            <img class="testimonial-avatar" src="${t.image}" alt="Photo of ${t.author}" loading="lazy"/>\n            <div><p class="quote">“${t.quote}”</p></div>\n          </div>\n          <div class="author">${t.author} • ${t.service}</div>\n        </article>`).join('');
+        testimonialList.querySelectorAll('.testimonial').forEach(el => io.observe(el));
+      })
     .catch(err => {
       testimonialList.setAttribute('aria-busy','false');
       testimonialList.innerHTML = '<p>Unable to load testimonials.</p>';
