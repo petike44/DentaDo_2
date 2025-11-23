@@ -52,24 +52,23 @@ body.dark .site-header { background:rgba(30,41,59,.75); }
 .nav-links { list-style:none; display:flex; gap:1.25rem; margin:0; padding:0; align-items:center; }
 .nav-links a { text-decoration:none; color:var(--color-text-dim); font-weight:500; padding:.35rem .9rem; border-radius:var(--radius-sm); position:relative; display:flex; align-items:center; height:60px; }
 .nav-links a:hover { color:var(--color-text); background:var(--color-surface-alt); }
-.nav-toggle { display:none; background:var(--color-surface-alt); border:1px solid var(--color-border); padding:.6rem .75rem; border-radius:var(--radius-sm); cursor:pointer; height:42px; align-items:center; }
-.mode-toggle { margin-left:auto; background:var(--color-surface-alt); border:1px solid var(--color-border); padding:.6rem .75rem; border-radius:var(--radius-sm); cursor:pointer; height:42px; display:flex; align-items:center; }
-.mode-toggle:hover, .nav-toggle:hover { background:var(--color-surface); }
+.nav-toggle { display:none; background:var(--color-accent-solid); color:#fff; border:2px solid var(--color-accent-solid); padding:.6rem .85rem; border-radius:var(--radius-sm); cursor:pointer; height:42px; align-items:center; font-size:1.25rem; font-weight:600; box-shadow:var(--shadow-sm); }
+.nav-toggle:hover { background:#1d4ed8; border-color:#1d4ed8; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.mode-toggle { margin-left:auto; margin-right:.75rem; background:var(--color-surface); border:2px solid var(--color-border); padding:.6rem .75rem; border-radius:var(--radius-sm); cursor:pointer; height:42px; display:flex; align-items:center; font-size:1.15rem; }
+.mode-toggle:hover { background:var(--color-surface-alt); border-color:var(--color-accent-solid); transform:scale(1.05); }
+body.dark .nav-toggle { background:#3b82f6; border-color:#3b82f6; }
+body.dark .nav-toggle:hover { background:#2563eb; border-color:#2563eb; }
 
 @media (max-width: 860px){
-  .nav-toggle { display:block; }
+  .nav-toggle { display:flex; }
   .nav-links { position:fixed; inset:0 0 auto 0; top:56px; flex-direction:column; background:var(--color-surface); padding:1.25rem 1.25rem 2.5rem; box-shadow:var(--shadow-md); transform:translateY(-140%); opacity:0; pointer-events:none; transition:var(--transition); max-height:calc(100dvh - 56px); overflow:auto; }
   .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
   body.dark .nav-links { background: var(--color-surface); }
-  .mode-toggle { order:3; }
-  /* Mobile nav-toggle alignment helpers */
+  /* Mobile: mode toggle and nav toggle at the end */
   .nav { flex-wrap:nowrap; }
-  /* Default: push menu button to far right */
-  .nav-toggle { margin-left:auto; }
-  /* Force left edge: add class left-edge to button */
-  .nav-toggle.left-edge { order:-1; margin-left:0; }
-  /* Explicit right edge utility if swapping dynamically */
-  .nav-toggle.right-edge { margin-left:auto; }
+  .brand { margin-right:auto; }
+  .mode-toggle { order:2; margin-left:0; }
+  .nav-toggle { order:3; margin-left:0; }
 }
 
 .hero { position:relative; min-height:84dvh; display:flex; align-items:center; padding:5rem 0 4rem; }
@@ -161,10 +160,10 @@ body.dark .about-single { filter:brightness(.9) saturate(.9); }
 
 /* Buttons */
 .btn { --_bg: var(--color-accent); display:inline-flex; align-items:center; justify-content:center; gap:.45rem; font-weight:600; font-size:.95rem; padding:.85rem 1.35rem; border-radius:var(--radius-md); text-decoration:none; position:relative; border:none; cursor:pointer; background: var(--_bg); color:#fff; box-shadow: var(--shadow-sm); transition:var(--transition); }
-.btn.small { padding:.4rem .85rem; font-size:.78rem; display:inline-flex; align-items:center; height:42px; border-radius:var(--radius-sm); }
+.btn.small { padding:.5rem 1rem; font-size:.85rem; display:inline-flex; align-items:center; height:42px; border-radius:var(--radius-sm); font-weight:600; }
 /* Specific nav Book button refinements */
-.nav .btn.small { box-shadow:none; }
-.nav .btn.small:hover { box-shadow:var(--shadow-sm); transform:translateY(-2px); }
+.nav .btn.small { box-shadow:var(--shadow-sm); color:#fff !important; }
+.nav .btn.small:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
 .btn:hover { box-shadow: var(--shadow-glow); transform:translateY(-3px); }
 .btn:active { transform:translateY(0); }
 .btn.outline { background:transparent; color:var(--color-text); border:2px solid var(--color-border); }
