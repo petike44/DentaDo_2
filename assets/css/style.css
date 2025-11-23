@@ -77,6 +77,13 @@ body.dark .site-header { background:rgba(30,41,59,.75); }
 .hero-content { text-align:left; }
 .hero-layout { display:grid; gap:3.2rem; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); align-items:center; }
 .hero-image { width:100%; aspect-ratio: 5/4; object-fit:cover; border-radius:var(--radius-lg); box-shadow:var(--shadow-md); }
+.hero-image.palette-match { /* Harmonize illustration with site palette */
+  filter: saturate(.85) brightness(.98) hue-rotate(195deg);
+  transition: filter var(--transition);
+}
+body.dark .hero-image.palette-match { filter: saturate(.75) brightness(.9) hue-rotate(205deg); }
+/* Optional stronger accent on hover (kept subtle) */
+.hero-image.palette-match:hover { filter: saturate(.95) brightness(1) hue-rotate(190deg); }
 .hero-cta { display:flex; gap:1rem; margin:2rem 0 2.75rem; flex-wrap:wrap; }
 .stats { display:flex; gap:2rem; flex-wrap:wrap; margin-top:.75rem; }
 .stat { display:flex; flex-direction:column; align-items:flex-start; }
@@ -88,7 +95,7 @@ body.dark .site-header { background:rgba(30,41,59,.75); }
 
 .service-grid { display:grid; gap:1.75rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
 .card { background:var(--color-surface); padding:1.4rem 1.3rem 1.55rem; border:1px solid var(--color-border); border-radius:var(--radius-md); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:.55rem; transition:var(--transition); position:relative; isolation:isolate; }
-.card-img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius-sm); margin:-.2rem 0 .6rem; box-shadow:0 2px 8px -2px rgba(0,0,0,.15); }
+.card-img { width:100%; aspect-ratio:4/3; object-fit:contain; object-position:center; border-radius:var(--radius-sm); margin:-.2rem 0 .6rem; box-shadow:0 2px 8px -2px rgba(0,0,0,.15); padding:.6rem; background:var(--color-surface-alt); }
 .card:hover { box-shadow:var(--shadow-md); transform:translateY(-4px); }
 .card h3 { margin:.2rem 0 .25rem; font-size:1.15rem; }
 .card p { margin:0; font-size:.95rem; color:var(--color-text-dim); }
@@ -98,13 +105,24 @@ body.dark .site-header { background:rgba(30,41,59,.75); }
 .check-list li { position:relative; padding-left:1.4rem; }
 .check-list li:before { content:'✔'; position:absolute; left:.15rem; top:.05rem; font-size:.85rem; color:#10b981; }
 .media-card { position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
-.media-card img { aspect-ratio: 4/3; object-fit:cover; width:100%; }
+.media-card img { aspect-ratio: 4/3; object-fit:contain; object-position:center; width:100%; padding:1.2rem; background:var(--color-surface-alt); }
+.media-card.svg-card { display:flex; align-items:center; justify-content:center; background:var(--color-surface-alt); }
+.media-card .about-illustration { width:100%; display:flex; align-items:center; justify-content:center; padding:1.4rem 1.2rem 3.2rem; }
+.media-card .about-illustration svg { width:100%; max-width:380px; height:auto; }
+body.dark .media-card.svg-card { background: var(--color-surface); }
+.about-single { padding:0; background:var(--color-surface-alt); }
+.about-single img { aspect-ratio:16/9; object-fit:cover; width:100%; height:auto; display:block; }
+body.dark .about-single { background:var(--color-surface); }
+body.dark .about-single img { filter:brightness(.9) saturate(.9); }
 .media-card .overlay { position:absolute; inset:auto 0 0 0; padding:.8rem 1rem; background:linear-gradient(to top,rgba(0,0,0,.55),transparent); color:#fff; font-size:.85rem; }
 
 .team-grid { display:grid; gap:1.75rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
 .person-card { background:var(--color-surface); padding:.9rem .9rem 1.2rem; border:1px solid var(--color-border); border-radius:var(--radius-md); box-shadow:var(--shadow-sm); transition:var(--transition); text-align:center; }
 .person-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
-.person-card img { border-radius:var(--radius-sm); aspect-ratio:1/1; object-fit:cover; margin-bottom:.85rem; }
+.person-card img { border-radius:var(--radius-sm); aspect-ratio:3/4; object-fit:cover; object-position:top center; margin-bottom:.85rem; width:100%; }
+@media (max-width:640px){
+  .person-card img { aspect-ratio:4/5; }
+}
 .person-card h3 { margin:0 0 .25rem; font-size:1.05rem; }
 .person-card p { margin:0; font-size:.85rem; color:var(--color-text-dim); }
 
