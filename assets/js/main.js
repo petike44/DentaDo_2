@@ -105,4 +105,14 @@
     }, 3400);
   }
 
+  // Fallback for team images if broken
+  document.querySelectorAll('.person-card img').forEach(img => {
+    img.addEventListener('error', () => {
+      const fallback = img.getAttribute('data-fallback');
+      if(fallback && img.src !== fallback){
+        img.src = fallback;
+      }
+    });
+  });
+
 })();

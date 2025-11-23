@@ -62,6 +62,14 @@ body.dark .site-header { background:rgba(30,41,59,.75); }
   .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
   body.dark .nav-links { background: var(--color-surface); }
   .mode-toggle { order:3; }
+  /* Mobile nav-toggle alignment helpers */
+  .nav { flex-wrap:nowrap; }
+  /* Default: push menu button to far right */
+  .nav-toggle { margin-left:auto; }
+  /* Force left edge: add class left-edge to button */
+  .nav-toggle.left-edge { order:-1; margin-left:0; }
+  /* Explicit right edge utility if swapping dynamically */
+  .nav-toggle.right-edge { margin-left:auto; }
 }
 
 .hero { position:relative; min-height:84dvh; display:flex; align-items:center; padding:5rem 0 4rem; }
